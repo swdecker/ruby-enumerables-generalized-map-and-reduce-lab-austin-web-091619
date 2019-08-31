@@ -9,6 +9,9 @@ end
   
 def reduce(arr, start = nil)
   increment = 0
+  #check for start value,
+  #if there isn't one, start at first array value, and both shorten the array looping and change the array index by 1
+  # otherwise start the ret_val with the given starting point
   unless start 
    ret_val = arr[0]
    increment = 1
@@ -16,6 +19,7 @@ def reduce(arr, start = nil)
     ret_val = start
   end
   
+  #
   length = arr.length-increment
   length.times do |i|
     ret_val = yield(ret_val,arr[i+increment])
